@@ -4,9 +4,22 @@ from app.api import chat, users
 
 app = FastAPI(
     title="Relaii API", 
-    version="1.0.0",
-    openapi_version="3.0.2"
+    version="1.0.0"
 )
+
+def custom_openapi():
+    if app.openapi_schema:
+        return app.openapi_schema
+    openapi_schema = get_openapi(
+        title="Relaii API",
+        version="1.0.0",
+        description="Relaii API documentation",
+        routes=app.routes,
+    )
+    app.openapi_schema = openapi_schema
+    return app.openapi_schema
+
+app.openapi = custom_openapi
 
 # CORS Configuration
 app.add_middleware(
