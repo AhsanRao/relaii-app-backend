@@ -7,7 +7,7 @@ app = FastAPI(title="Relaii API", version="1.0.0")
 # CORS Configuration
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["35.183.222.241", "ec2-35-183-222-241.ca-central-1.compute.amazonaws.com", "http://35.183.222.241", "http://ec2-35-183-222-241.ca-central-1.compute.amazonaws.com"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
