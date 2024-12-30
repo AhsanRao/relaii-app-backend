@@ -17,6 +17,6 @@ app.add_middleware(
 app.include_router(chat.router, prefix="/api/chat", tags=["chat"])
 app.include_router(users.router, prefix="/api/users", tags=["users"])
 
-@app.get("/api")
+@app.get("/")
 async def root():
     return {"message": "Welcome to Relaii API"}
