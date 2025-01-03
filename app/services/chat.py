@@ -17,11 +17,11 @@ def count_tokens(text: str) -> int:
 
 async def generate_conversation(message: str, subject: str):
     # Store the user input
-    chat_logs_collection.insert_one({
-        "message": message,
-        "subject": subject,
-        "timestamp": datetime.utcnow()
-    })
+    # chat_logs_collection.insert_one({
+    #     "message": message,
+    #     "subject": subject,
+    #     "timestamp": datetime.utcnow()
+    # })
     
     # Construct the system message based on requirements
     system_message = f"""You are Relaii, a communication facilitator. Generate a natural conversation following these rules:
