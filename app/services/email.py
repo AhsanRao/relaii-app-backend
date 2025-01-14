@@ -26,7 +26,7 @@ async def send_welcome_email(user_name: str, user_email: str):
         msg = MIMEMultipart()
         msg['From'] = f"{settings.EMAIL_FROM_NAME} <{settings.EMAIL_FROM_ADDRESS}>"
         msg['To'] = user_email
-        msg['Subject'] = f"Welcome to Relaii, {user_name}!"
+        msg['Subject'] = f"You’re in, {user_name}! Let’s redefine conversations together."
         
         # Attach the HTML content
         msg.attach(MIMEText(html_content, 'html'))
